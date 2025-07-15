@@ -1,0 +1,23 @@
+{
+  "name": "darkstar-pair-login",
+  "version": "1.0.0",
+  "description": "WhatsApp Pair Code Login Tool with Auto File Send",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "pair-code",
+    "wppconnect",
+    "darkstar",
+    "auto-send",
+    "session"
+  ],
+  "author": "Sahil Khan",
+  "license": "MIT",
+  "dependencies": {
+    "@wppconnect-team/wppconnect": "^1.9.9",
+    "express": "^4.18.2"
+  }
+}
