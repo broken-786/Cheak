@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DarkStar Login</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #00ffea;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .code-box {
+      border: 2px dashed #00ffea;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 22px;
+      background: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Pair Code Login</h1>
+  <div class="code-box" id="code">Loading pair code...</div>
+
+  <script>
+    async function fetchCode() {
+      const res = await fetch('/code.txt');
+      if (res.ok) {
+        const code = await res.text();
+        document.getElementById('code').innerText = code.trim();
+      } else {
+        document.getElementById('code').innerText = 'Waiting for pair code...';
+      }
+    }
+
+    setInterval(fetchCode, 2000);
+    fetchCode();
+  </script>
+</body>
+</html>
